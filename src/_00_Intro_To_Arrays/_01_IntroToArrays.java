@@ -53,9 +53,10 @@ public class _01_IntroToArrays {
             largestNumber = numbers[i];
             }
         }
-        System.out.println(largestNumber);
+       
         
         // 12. print only the last element in the array
         System.out.println(numbers[49]);
+        System.out.println(largestNumber);
     }
 }
