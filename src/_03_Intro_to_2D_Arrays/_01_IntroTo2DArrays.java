@@ -11,16 +11,15 @@ public class _01_IntroTo2DArrays {
         //    BE SURE TO USE THE ARRAY'S length VARIABLE
         for(int i = 0; i < numbers.length; i++) {
         	for(int j = 0; j < numbers[i].length; j++) {
-        		numbers[i][j] = i;
-        		numbers[j][i] = j;
+        		numbers[i][j] = j;
         	}
         }
         // 3. print the third element from the second 1D array (2DArray[1][2])
-
+        System.out.println(numbers[1][2]);
         // 4. set the third element from the second 1D array to a different
         //    value
-
+        numbers[1][2] = 30;
         // 5. print the element again and verify the value has changed
-
+        System.out.println(numbers[1][2]);
     }
 }
