@@ -30,9 +30,16 @@ public class _02_2DArrayPractice {
      *          3, 4, 5
      *          6, 7, 8
      */
+    
+    
     public Integer[][] test1() {
-        
-        return null;
+        int[][] array2d = new int[3][3];
+    for(int i = 0; i < array2d.length; i++){
+     for(int j = 0; j < array2d[i].length; j++){
+     array2d[i][j] = j + i;
+     }
+    }
+        return array2d;
     }
     
     /*
