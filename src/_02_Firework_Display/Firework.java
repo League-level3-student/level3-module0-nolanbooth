@@ -73,7 +73,7 @@ public class Firework{
     public void drawSparks(Graphics g) {
         // 5. Iterate through each spark
     	for(int i = 0; i < sparks.length; i++) {
-    		sparks[i].color = Color.green;
+    		sparks[i].color = g.setColor(sparks[i].color);
     		g.fillOval(sparks[i].x, sparks[i].y, sparks[i].size, sparks[i].size);
     	}
         // 6. Set the color to the spark's color with g.setColor()

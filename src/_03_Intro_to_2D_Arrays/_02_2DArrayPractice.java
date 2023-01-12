@@ -31,14 +31,12 @@ public class _02_2DArrayPractice {
      *          6, 7, 8
      */
     
-    
-    public Integer[][] test1() {
-        int[][] array2d = new int[3][3];
-    for(int i = 0; i < array2d.length; i++){
-     for(int j = 0; j < array2d[i].length; j++){
-     array2d[i][j] = j + i;
-     }
+    public static void main(String[] args) {
+    	
     }
+    public int[][] test1() {
+        int[][] array2d = new int[3][3];
+
         return array2d;
     }
     
@@ -48,8 +46,9 @@ public class _02_2DArrayPractice {
      *          "e", "f", "g", "e"
      */
     public String[][] test2() {
+        String[][] array2d = new String[2][4];
         
-        return null;
+        return array2d;
     }
     
     /*
@@ -61,20 +60,29 @@ public class _02_2DArrayPractice {
      *          true, false
      */
     public Boolean[][] test3() {
-        
-        return null;
+        Boolean[][] array2d = new Boolean[5][2];
+    	
+        return array2d;
     }
     
     /*
      * Draw the grid of values for the following 2D array of ints:
      * Assume all the elements in the 2D array are initialized to random ints
      * 
-     * int[][] grid = new int[2][3];
+      *int[][] grid = new int[2][3];
      * 
      * 
      * 
      * Show your teacher the grid you created
      */
+    public void draw(int[][] grid) {
+		for(int i = 0; i < grid.length; i++) {
+			for(int j = 0; j <grid[i].length; j++) {
+			System.out.print(grid[i][i]);
+			}
+			System.out.println();
+		}
+    }
     
     /*
      * Draw the grid of values for the following 2D array of Robots
@@ -93,7 +101,11 @@ public class _02_2DArrayPractice {
      */
     public Object test4() {
         Object[][] objects = { {null, null, null, null}, {null, null, null, new Object()} };
-        
+        for(int i = 0; i < objects.length; i++) {
+        	if(objects[i] != null) {
+        		return objects[i];
+        	}
+        }
         return null;
     }
     
@@ -103,7 +115,11 @@ public class _02_2DArrayPractice {
      */
     public Object test5() {
         Object[][] objects = { {null, null, new Object(), null}, {null, null, null, null} };
-        
+        for(int i = 0; i < objects.length; i++) {
+        	if(objects[i] != null) {
+        		return objects[i];
+        	}
+        }
         return null;
     }
     
@@ -113,8 +129,11 @@ public class _02_2DArrayPractice {
      */
     public Integer test6() {
         int[][] nums = { {8, 7, 6, 5}, {4, 3}, {2, 1, 0} };
-        
-        return null;
+        int added = 0;
+        for(int i = 0; i < nums[0].length; i++) {
+        	added = added + nums[0][i];
+        }
+        return added;
     }
     
     /*
@@ -123,8 +142,12 @@ public class _02_2DArrayPractice {
      */
     public Integer test7() {
         int[][] nums = { {8, 7, 6, 5}, {4, 3}, {2, 1, 0} };
+        int added = 0;
+        for(int i = 0; i < nums.length; i++) {
+        	added = added + nums[i][0];
+        }
+        return added;
         
-        return null;
     }
     
     /*
@@ -132,8 +155,11 @@ public class _02_2DArrayPractice {
      * specified row
      */
     public Integer getSumByRow(int[][] matrix, int row) {
-        
-        return null;
+    	 int added = 0;
+         for(int i = 0; i < matrix[row].length; i++) {
+         	added = added + matrix[row][i];
+         }
+        return added;
     }
     
     /*
@@ -141,8 +167,11 @@ public class _02_2DArrayPractice {
      * specified column
      */
     public Integer getSumByColumn(int[][] matrix, int col) {
-        
-        return null;
+    	 int added = 0;
+         for(int i = 0; i < matrix.length; i++) {
+         	added = added + matrix[i][col];
+         }
+        return added;
     }
     
     /*
@@ -165,18 +194,48 @@ public class _02_2DArrayPractice {
      *    boundaries, return null.
      */
     public Integer getEastNeighbor(int[][] matrix, int row, int col) {
-        
-        return null;
+        int value;
+        int matrixRow;
+        int matrixCol;
+        matrixRow = matrix.length;
+        matrixCol = matrix[0].length;
+        if(row >= matrixRow || col >= matrixCol) {
+        	return null;
+        }else {
+        	value = matrix[row][col+1];
+        	return value;
+        }
+       // return null;
     }
     
     public Integer getWestNeighbor(int[][] matrix, int row, int col) {
+    	int value;
+        int matrixRow;
+        int matrixCol;
+        matrixRow = matrix.length;
+        matrixCol = matrix[0].length;
+        if(row > matrixRow || col > matrixCol) {
+        	return null;
+        }else {
+        	value = matrix[row][col-1];
+        	return value;
+        }
         
-        return null;
     }
     
     public Integer getNorthNeighbor(int[][] matrix, int row, int col) {
-        
-        return null;
+    	int value;
+        int matrixRow;
+        int matrixCol;
+        matrixRow = matrix.length;
+        matrixCol = matrix[0].length;
+        if(row >= matrixRow || col >= matrixCol) {
+        	return null;
+        }else {
+        	value = matrix[row-1][col];
+        	return value;
+        }   
+     
     }
     
     public Integer getSouthNeighbor(int[][] matrix, int row, int col) {

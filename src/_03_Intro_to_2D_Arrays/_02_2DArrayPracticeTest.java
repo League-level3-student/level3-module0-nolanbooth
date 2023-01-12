@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 class _02_2DArrayPracticeTest {
     @Test
     void test_1_Init1() {
-        Integer[][] p = new _02_2DArrayPractice().test1();
+        int[][] p = new _02_2DArrayPractice().test1();
         assertTrue(p.length == 3);
         assertTrue(p[0].length == 3);
         assertTrue(p[1].length == 3);
