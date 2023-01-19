@@ -24,7 +24,7 @@ public class CrazyDigitalPainting {
         //    colors[i][j] = new Color(i % 256, (i * j) % 256, j % 256);
     	for(int i = 0; i < colors.length; i++) {
     		for(int j = 0; j < colors[i].length; j++) {
-    			colors[i][j] = new Color(ran.nextInt(100), ran.nextInt(150), ran.nextInt(200));
+    			colors[i][j] = new Color(ran.nextInt(100), ran.nextInt(10), ran.nextInt(200));
     			
     		}
     		

@@ -194,52 +194,52 @@ public class _02_2DArrayPractice {
      *    boundaries, return null.
      */
     public Integer getEastNeighbor(int[][] matrix, int row, int col) {
-        int value;
         int matrixRow;
         int matrixCol;
         matrixRow = matrix.length;
         matrixCol = matrix[0].length;
-        if(row >= matrixRow || col >= matrixCol) {
+        if(row >= matrixRow || col >= matrixCol-1) {
         	return null;
         }else {
-        	value = matrix[row][col+1];
-        	return value;
+      return matrix[row][col+1];
         }
-       // return null;
     }
     
     public Integer getWestNeighbor(int[][] matrix, int row, int col) {
-    	int value;
         int matrixRow;
         int matrixCol;
         matrixRow = matrix.length;
         matrixCol = matrix[0].length;
-        if(row > matrixRow || col > matrixCol) {
+        if(row >= matrixRow || col <= 1) {
         	return null;
-        }else {
-        	value = matrix[row][col-1];
-        	return value;
         }
+        return matrix[row][col-1];
         
     }
     
     public Integer getNorthNeighbor(int[][] matrix, int row, int col) {
-    	int value;
         int matrixRow;
         int matrixCol;
         matrixRow = matrix.length;
         matrixCol = matrix[0].length;
-        if(row >= matrixRow || col >= matrixCol) {
-        	return null;
-        }else {
-        	value = matrix[row-1][col];
-        	return value;
-        }   
+       if(row <= 1 || col >= matrixCol) {
+    	   return null;
+       }else {
+    	   return matrix[row-1][col];
+       }
      
     }
     
     public Integer getSouthNeighbor(int[][] matrix, int row, int col) {
-        
-        return null;
+        int matrixRow;
+        int matrixCol;
+        matrixRow = matrix.length;
+        matrixCol = matrix[0].length;
+        if(row >= matrixRow -1 || col >= matrixCol) {
+        	return null;
+        }else {
+        	return matrix[row + 1][col];
+        }
+       
     }
 }
