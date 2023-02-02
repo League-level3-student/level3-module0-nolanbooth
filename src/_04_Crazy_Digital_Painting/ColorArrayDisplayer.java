@@ -18,7 +18,7 @@ public class ColorArrayDisplayer {
         BufferedImage image = new BufferedImage(colors.length, colors[0].length, BufferedImage.TYPE_INT_RGB);
         for(int i = 0; i < colors.length; i++) {
             for(int j = 0; j < colors[0].length; j++) {
-                image.setRGB(i, j, colors[i][j].getRGB());
+                image.setRGB(i, j, colors[i][i].getRGB());
             }
         }
 
