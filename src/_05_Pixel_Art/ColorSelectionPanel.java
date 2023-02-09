@@ -79,7 +79,7 @@ public class ColorSelectionPanel extends JPanel implements MouseListener, Change
 
     @Override
     public void mouseClicked(MouseEvent e) {
-
+    	
     }
 
     @Override
