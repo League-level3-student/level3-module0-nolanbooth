@@ -157,7 +157,7 @@ public class TheWrongWayCow {
 				return 2;
 			}
 		}
-		if (y - 2 >= field[0].length) {
+		if (y - 2 >= 0) {
 			if (field[x][y - 1] == letterO && field[x][y - 2] == letterW) {
 				northCount++;
 				northX = x;
