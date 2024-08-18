@@ -9,18 +9,18 @@ import javax.swing.JPanel;
 public class GridPanel extends JPanel{
 
     private static final long serialVersionUID = 1L;
-    private int windowWidth;
-    private int windowHeight;
+    private   int windowWidth;
+    private  int windowHeight;
     private int pixelWidth;
     private int pixelHeight;
-    private int rows;
-    private int cols;
-
+    private  int rows;
+    private  int cols;
+   
     // 1. Create a 2D array of pixels. Do not initialize it yet.
-    Pixel[][] pixels;
+     Pixel[][] pixels;
     private Color color;
 
-    public GridPanel(int w, int h, int r, int c) {
+    public  GridPanel(int w, int h, int r, int c) {
         this.windowWidth = w;
         this.windowHeight = h;
         this.rows = r;
@@ -76,5 +76,22 @@ public class GridPanel extends JPanel{
     			g.drawRect(pixels[i][j].x, pixels[i][j].y, pixelWidth, pixelHeight);
     		}
     	}
+    }public void setPixels(Pixel[][] pixels) {
+    	this.pixels = pixels;
+    	
+    }public Pixel[][] getPixels(){
+    	
+    	
+    	return pixels;
+    	
+    }public  int[] getVars(){
+    	
+    	int[] variables = {windowWidth, windowHeight, rows, cols};
+    	
+    	
+    	return variables;
     }
+    
+    
+    
 }
