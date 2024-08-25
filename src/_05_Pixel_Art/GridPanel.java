@@ -77,7 +77,10 @@ public class GridPanel extends JPanel{
     		}
     	}
     }public void setPixels(Pixel[][] pixels) {
+    	System.out.println("Theoretically, the pixels should be redone");
+    	
     	this.pixels = pixels;
+    	
     	
     }public Pixel[][] getPixels(){
     	

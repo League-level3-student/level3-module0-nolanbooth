@@ -27,7 +27,10 @@ public class GridInputPanel extends JPanel implements ActionListener, Serializab
     private JButton submitButton;
     private JButton save;
     private JButton load;
-
+    int w = -1;
+    int h = -1;
+    int r = -1;
+    int c = -1;
     PixelArtMaker pam;
     private static final String DATA_FILE = "src/_05_Pixel_Art/saved.dat";
     public GridInputPanel(PixelArtMaker pam) {
@@ -61,10 +64,7 @@ public class GridInputPanel extends JPanel implements ActionListener, Serializab
 
     private void submit() {
         boolean valid = false;
-        int w = -1;
-        int h = -1;
-        int r = -1;
-        int c = -1;
+       
         try {
             w = Integer.parseInt(windowWidthField.getText());
             h = Integer.parseInt(windowHeightField.getText());
@@ -101,12 +101,33 @@ public class GridInputPanel extends JPanel implements ActionListener, Serializab
 		
 
 		save(new SaveState(vars[0], vars[1], vars[2], vars[3], pam.getPanel().getPixels()));
-		}if(e.getSource() == load) {
+		}
+		
+		
+		if(e.getSource() == load) {
+			
+			if(pam.getPanel() == null) {
+				SaveState save = load();
+				 w = save.getWindowWidth();
+		         h = save.getWindowHeight();
+		         r = save.getRows();
+		         c = save.getCols();
+		         
+		         pam.submitGridData(w, h, r, c);
+				
+				
+				pam.getPanel().setPixels(save.getPixels());
+				pam.repaint();
+			}else {
+			
 			System.out.println("load button pressed");
 			SaveState save = load();
+			System.out.println("In theory, the savestate save object now is equal to all the data that was saved");
 			
-			pam.setPanel(new GridPanel(save.getWindowHeight(), save.getWindowWidth(), save.getRows(), save.getCols()));
+			//pam.setPanel(new GridPanel(save.getWindowHeight(), save.getWindowWidth(), save.getRows(), save.getCols()));
 			pam.getPanel().setPixels(save.getPixels());
+			pam.repaint();
+			}
 			
 		}
 		
@@ -126,16 +147,22 @@ public class GridInputPanel extends JPanel implements ActionListener, Serializab
 		System.out.println("load method called");
 		
 		try (FileInputStream fis = new FileInputStream(new File(DATA_FILE)); ObjectInputStream ois = new ObjectInputStream(fis)) {
+			System.out.println("returned savestate in theory");
+			
 			return (SaveState) ois.readObject();
 		} catch (IOException e) {
 			e.printStackTrace();
+			//System.out.println("IOexception noah");
 			return null;
 		} catch (ClassNotFoundException e) {
 			// This can occur if the object we read from the file is not
 			// an instance of any recognized class
+			//System.out.println("Class not found");
 			e.printStackTrace();
 			return null;
 		}
+		
+		
 		
 	} public void streamline() {
 		

@@ -43,7 +43,12 @@ public class PixelArtMaker implements MouseListener {
 
 	public void setPanel(GridPanel panel) {
 		this.gp = panel;
+		
+		
 		gp.repaint();
+	}public void repaint() {
+		gp.repaint();
+		
 	}
 
 	public static void main(String[] args) {
